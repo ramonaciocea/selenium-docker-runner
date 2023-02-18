@@ -29,9 +29,8 @@ services:
     image: "selenoid/vnc_chrome:110.0"
 
   test-framework:
-    build:
-      context: .
     network_mode: bridge
+    image: ramociocea/selenium-docker:latest
     volumes:
       - "./Reports/:/Reports/"
     links:
