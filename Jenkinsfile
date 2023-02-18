@@ -10,7 +10,7 @@ pipeline {
 		stage('Run Test') {
             steps {
                 //sh
-                bat "docker-compose up selenium-docker"
+                bat "docker-compose up test-framework"
             }
         }
         stage('Stop Grid') {
