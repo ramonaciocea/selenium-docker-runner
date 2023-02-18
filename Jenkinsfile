@@ -4,7 +4,7 @@ pipeline {
         stage('Start Grid') {
             steps {
                 //sh
-                bat "docker-compose up -d selenoid selenoid-ui vnc_chrome"
+                bat "docker-compose up -d selenoid selenoid-ui vnc_chrome:110.0"
             }
         }
 		stage('Run Test') {
