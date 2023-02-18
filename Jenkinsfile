@@ -1,13 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage('Run Test') {
+        stage('Start Grid') {
             steps {
                 //sh
-                bat "docker-compose up"
+                bat "docker-compose up -d hub vnc_chrome"
             }
         }
-        stage('Bring Grid Down') {
+		stage('Run Test') {
+            steps {
+                //sh
+                bat "docker-compose up selenium-docker"
+            }
+        }
+        stage('Stop Grid') {
             steps {
                 //sh
                 bat "docker-compose down"
