@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+	    stage('Pull Latest Image') {
+            steps {
+                //sh
+                bat "docker pull ramociocea/selenium-docker:latest"
+            }
+        }
         stage('Start Grid') {
             steps {
                 //sh
