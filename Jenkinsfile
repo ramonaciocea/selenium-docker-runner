@@ -13,11 +13,11 @@ pipeline {
                 bat "docker-compose up test-framework"
             }
         }
-        stage('Stop Grid') {
-            steps {
-                //sh
-                bat "docker-compose down"
-            }
-        }
     }
+	post{
+		always{
+			//archiveArtifacts artifacts: 'Reports/**'
+			bat "docker-compose down"
+		}
+	}
 }
